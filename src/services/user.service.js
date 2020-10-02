@@ -1,15 +1,15 @@
 import axios from 'axios'
 import authHeader from './auth-header'
 
-const API_URL = 'https://reqres.in/api/'
+const API_URL = `https://reqres.in/api/`
 
 class UserService {
   getPublicContent() {
-    return axios.get(API_URL + 'all')
+    return axios.get(API_URL + `all`)
   }
 
   getUserHome() {
-    return axios.get(API_URL + 'user', { headers: authHeader() })
+    return axios.get(API_URL + `user`, { headers: authHeader() })
   }
 
 
