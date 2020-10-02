@@ -1,10 +1,20 @@
 <template>
   <div id="app">
+    <div>
+      <b-button>Button</b-button>
+      <b-button variant="danger">Button</b-button>
+      <b-button variant="success">Button</b-button>
+      <b-button variant="outline-primary">Button</b-button>
+    </div>
+    <div class="h2 mb-0">
+      <b-icon-arrow-up></b-icon-arrow-up>
+      <b-icon-exclamation-triangle-fill></b-icon-exclamation-triangle-fill>
+    </div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
