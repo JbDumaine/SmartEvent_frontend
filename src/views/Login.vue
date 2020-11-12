@@ -32,9 +32,8 @@
           </button>
         </div>
         <div class="d-flex flex-column align-items-center">
-          <a @click="register()">Pas encore inscrit ? Rejoignez-nous !</a>
+          <router-link to="/register">Not subscribes ? Join us !</router-link>
         </div>
-        
         <div class="form-group">
           <div v-if="message" class="alert alert-danger" role="alert">
             {{ message }}
@@ -97,13 +96,14 @@ export default {
 
 <style lang="scss" scoped>
 a {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   color: $pink !important;
 }
 a:hover {
   color: $green !important;
+  text-decoration: none;
 }
 
 label {
