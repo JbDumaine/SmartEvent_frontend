@@ -10,8 +10,17 @@ export default {
     EventForm,
   },
   data() {
-    return {
-    };
+    return {};
+  },
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    },
+  },
+  mounted() {
+    if (!this.currentUser) {
+      this.$router.push(`/welcome`);
+    }
   },
 };
 </script>
@@ -30,7 +39,7 @@ export default {
   padding: 0px;
 }
 .card-title {
-  font-size: 15px;
+  font-size: 20px;
   color: $white;
   background-color: $green;
   padding: 10px;

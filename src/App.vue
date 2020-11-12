@@ -1,9 +1,24 @@
 <template>
-  <b-container id="app" class="h-100 my-auto">
-    <router-view />
-  </b-container>
+  <div id="app" class="h-100">
+    <Header
+      v-if="
+        this.$route.name !== 'Login' &&
+        this.$route.name !== 'Register' &&
+        this.$route.name !== 'Welcome' &&
+        this.$route.name !== 'Invitation'
+      "
+    />
+    <b-container><router-view /> </b-container>
+  </div>
 </template>
-
+<script>
+import Header from "./components/Header";
+export default {
+  components: {
+    Header,
+  },
+};
+</script>
 <style lang="scss">
 html {
   height: 100%;
@@ -45,7 +60,7 @@ body {
 }
 
 .btn-success:hover {
-  background-color: $lightSilverTree!important;
+  background-color: $lightSilverTree !important;
   border-color: $lightSilverTree !important;
 }
 .card-title {
@@ -53,5 +68,4 @@ body {
   font-size: 30px;
   color: $green;
 }
-
 </style>

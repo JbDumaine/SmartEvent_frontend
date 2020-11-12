@@ -1,70 +1,45 @@
 <template>
-<div id="wrapper">
-    <div class="header_container">
-    <nav id="nav_container">
-        <ul id="list_nav">
-            <li class="nav-item"><a href="">Accueil</a></li>
-            <li class="nav-item"><a href="">Evènements</a></li>
-            <li class="nav-item"><a href="">Contact</a></li>
-        </ul>
-    </nav>
-    <a href="" id="logout_btn">Se déconnecter</a>
+  <div>
+    <b-navbar toggleable="lg" class="main-nav">
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item href="#">Home</b-nav-item>
+          <b-nav-item href="#">Events</b-nav-item>
+          <b-nav-item href="#">Guests</b-nav-item>
+        </b-navbar-nav>
+
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item href="#">Legal Notice</b-nav-item>
+          <b-nav-item id="logout-item-nav" href="#">Logout</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
   </div>
-</div>
 </template>
 
 <script>
 export default {
   name: `Header`,
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.header_container{
-    display: flex;
-    justify-content: space-between;
-    background: $pink;
+.main-nav {
+  background-color: $pink;
 }
-
-h1{
-    font-family: 'Work Sans', sans-serif;
+::v-deep .navbar-light .navbar-nav .nav-link {
+  color: $white;
 }
-
-#nav_container{
-    width: 50%;
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: white;
+  background-color: $green;
 }
-
-.nav-item{
-    list-style: none;
-    background: $green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 50px;
-}
-
-.nav-item > a{
-    text-decoration: none;
-    color: $white;
-}
-
-.nav-item:hover {
-    background: $pink;
-}
-
-#logout_btn{
-    background: $blue;
-    color: $white;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#list_nav{
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
+#logout-item-nav {
+    background-color: $blue;
 }
 </style>
