@@ -4,6 +4,10 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+.btn-primary {
+  background-color: $blue;
+  border-color: $blue;
+}
 
 </style>
