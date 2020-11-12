@@ -1,8 +1,8 @@
 <template>
   <div class="col-md-12">
-    <div id="test" class="card card-container">
+    <div class="card card-container px-2 pt-0">
+      <div class="card-title text-center">Login</div>
       <img id="profile-img" src="../assets/logo_SE.png" class="profile-img-card" />
-
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Email</label>
@@ -31,7 +31,10 @@
             <span>Login</span>
           </button>
         </div>
-        <a>Pas encore inscrit ? Rejoignez-nous !</a>
+        <div class="d-flex flex-column align-items-center">
+          <a @click="register()">Pas encore inscrit ? Rejoignez-nous !</a>
+        </div>
+        
         <div class="form-group">
           <div v-if="message" class="alert alert-danger" role="alert">
             {{ message }}
@@ -81,42 +84,44 @@ export default {
           }
         )
       }
+    },
+
+    register(){
+      this.$router.push('/register');
     }
+
   }
 }
 </script>
 
 
 <style lang="scss" scoped>
-a{
+a {
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
-  color: #E44FAA !important;
+  color: $pink !important;
 }
-a:hover{
-  color: #51C5B3 !important;
+a:hover {
+  color: $green !important;
 }
-
-
 
 label {
   display: block;
   margin-top: 10px;
 }
 
-
 .card-container.card {
   max-width: 350px !important;
   padding: 40px 40px;
 }
 
-#test{
-  background-color: #FFFFFF;
+.card .card-container{
+  background-color: $white;
 }
 
 .card {
-  background-color: #f7f7f7;
+  background-color: $white;
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
   margin-top: 50px;
@@ -128,6 +133,11 @@ label {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 
 }
+.card-title{
+  font-weight: $titleWeight;
+  font-size : 30px;
+  color : $green;
+}
 
 .profile-img-card {
   width: 250px;
@@ -136,15 +146,4 @@ label {
   display: block;
   border-radius: 5px;
 }
-
-.btn{
- background-color : #2A2B6C ;
- border-color: #2A2B6C;
-}
-
-.btn{
- background-color : #2A2B6C ;
- border-color: #2A2B6C;
-
-}
- </style>
+</style>
