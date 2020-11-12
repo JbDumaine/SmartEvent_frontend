@@ -67,9 +67,7 @@ export default {
   border-radius: 2px;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
-.card-title {
-  font-weight: $titleWeight;
-}
+
 .modal-invitation{
   font-size: 2rem;
   font-weight: $titleWeight;

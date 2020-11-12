@@ -150,6 +150,7 @@ a:hover {
   text-align: center;
   font-weight: $titleWeight;
   color: $green;
+  
   margin-bottom: 10px;
 }
 
