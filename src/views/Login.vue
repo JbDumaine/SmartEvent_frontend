@@ -2,6 +2,7 @@
   <div class="col-md-12">
     <div id="test" class="card card-container">
       <img id="profile-img" src="../assets/logo_SE.png" class="profile-img-card" />
+
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Email</label>
@@ -85,7 +86,8 @@ export default {
 }
 </script>
 
-<style scoped>
+
+<style lang="scss" scoped>
 a{
   font-size: 12px;
   font-weight: bold;
@@ -95,6 +97,9 @@ a{
 a:hover{
   color: #51C5B3 !important;
 }
+
+
+
 label {
   display: block;
   margin-top: 10px;
@@ -119,6 +124,7 @@ label {
   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
 }
 
 .profile-img-card {
@@ -137,5 +143,6 @@ label {
 .btn{
  background-color : #2A2B6C ;
  border-color: #2A2B6C;
+
 }
  </style>
