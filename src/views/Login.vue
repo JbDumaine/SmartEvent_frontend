@@ -1,7 +1,8 @@
 <template>
   <div class="col-md-12">
-    <div class="card card-container">
-      <img id="logo-img" src="../assets/logo_smartevent.png" class="" />
+    <div id="test" class="card card-container">
+      <img id="profile-img" src="../assets/logo_SE.png" class="profile-img-card" />
+
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Email</label>
@@ -30,14 +31,15 @@
             <span>Login</span>
           </button>
         </div>
+        <a>Pas encore inscrit ? Rejoignez-nous !</a>
         <div class="form-group">
           <div v-if="message" class="alert alert-danger" role="alert">
             {{ message }}
           </div>
         </div>
       </form>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -84,10 +86,33 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
+a{
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #E44FAA !important;
+}
+a:hover{
+  color: #51C5B3 !important;
+}
+
+
+
 label {
   display: block;
   margin-top: 10px;
+}
+
+
+.card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+#test{
+  background-color: #FFFFFF;
 }
 
 .card {
@@ -101,6 +126,25 @@ label {
   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  background-color: $green;
+
 }
-</style>
+
+.profile-img-card {
+  width: 250px;
+  height: 160px;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+.btn{
+ background-color : #2A2B6C ;
+ border-color: #2A2B6C;
+}
+
+.btn{
+ background-color : #2A2B6C ;
+ border-color: #2A2B6C;
+
+}
+ </style>
