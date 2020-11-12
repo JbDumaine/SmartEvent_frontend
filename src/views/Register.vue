@@ -47,6 +47,7 @@
           <div class="form-group">
             <button class="btn btn-primary btn-block">Sign Up</button>
           </div>
+          <router-link to="/login">Already have an account</router-link>
         </div>
       </form>
 
