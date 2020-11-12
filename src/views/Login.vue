@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-12">
-    <div id="test" class="card card-container">
+    <div id="login_card" class="card card-container">
       <img id="profile-img" src="../assets/logo_SE.png" class="profile-img-card" />
 
       <form name="form" @submit.prevent="handleLogin">
@@ -106,12 +106,8 @@ label {
 }
 
 
-.card-container.card {
-  max-width: 350px !important;
-  padding: 40px 40px;
-}
 
-#test{
+#login_card{
   background-color: #FFFFFF;
 }
 

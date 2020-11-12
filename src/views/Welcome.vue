@@ -2,7 +2,7 @@
   <b-row class="welcome h-100">
     <b-col cols="12" class="my-auto">
       <b-card title="Welcome to Smart Event" class="text-center welcome-card">
-        <img id="logo-img" src="../assets/logo_smartevent.png" class="mt-4" />
+        <img id="logo-img" src="../assets/logo_SE.png" class="mt-4" />
         <b-card-text class="row mt-4">
           <b-col cols="12" class="mt-4">
             <router-link to="/login"
@@ -32,14 +32,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card {
-  background-color: $green;
-  color: $white;
+  background-color: $white;
+  color: $green;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
 .card-title {
   font-weight: 900;
+  font-size: 30px;
 }
 .card img {
-  width: 50%;
+  width: 100%;
 }
 </style>
