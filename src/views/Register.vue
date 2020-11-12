@@ -138,8 +138,6 @@ a:hover {
 }
 .card-title{
   text-align : center;
-  font-weight: $titleWeight;
-  color : $green;
   margin-bottom: 10px;
 }
 

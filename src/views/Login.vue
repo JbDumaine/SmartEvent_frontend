@@ -132,11 +132,6 @@ label {
   border-radius: 2px;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
-.card-title {
-  font-weight: $titleWeight;
-  font-size: 30px;
-  color: $green;
-}
 
 .profile-img-card {
   width: 250px;

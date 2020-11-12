@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid id="app" class="h-100 my-auto">
+  <b-container id="app" class="h-100 my-auto">
     <router-view />
   </b-container>
 </template>
@@ -48,4 +48,10 @@ body {
   background-color: $lightSilverTree!important;
   border-color: $lightSilverTree !important;
 }
+.card-title {
+  font-weight: $titleWeight;
+  font-size: 30px;
+  color: $green;
+}
+
 </style>
