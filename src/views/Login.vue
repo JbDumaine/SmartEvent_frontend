@@ -2,7 +2,11 @@
   <div class="col-md-12">
     <div class="card card-container px-2 pt-0">
       <div class="card-title text-center">Login</div>
-      <img id="profile-img" src="../assets/logo_SE.png" class="profile-img-card" />
+      <img
+        id="profile-img"
+        src="../assets/logo_SE.png"
+        class="profile-img-card"
+      />
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Email</label>
@@ -34,19 +38,19 @@
         <div class="d-flex flex-column align-items-center">
           <a @click="register()">Pas encore inscrit ? Rejoignez-nous !</a>
         </div>
-        
+
         <div class="form-group">
           <div v-if="message" class="alert alert-danger" role="alert">
             {{ message }}
           </div>
         </div>
       </form>
-      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import User from "../models/user"
+import User from "../models/user";
 
 export default {
   name: `Login`,
@@ -54,44 +58,43 @@ export default {
     return {
       user: new User(``, ``),
       loading: false,
-      message: ``
-    }
+      message: ``,
+    };
   },
   computed: {
     loggedIn() {
-      return this.$store.state.auth.status.loggedIn
-    }
+      return this.$store.state.auth.status.loggedIn;
+    },
   },
   created() {
     if (this.loggedIn) {
-      this.$router.push(`/home`)
+      this.$router.push(`/home`);
     }
   },
   methods: {
     handleLogin() {
-      this.loading = true
+      this.loading = true;
       if (this.user.email && this.user.password) {
         this.$store.dispatch(`auth/login`, this.user).then(
           () => {
-            this.$router.push(`/`)
+            this.$router.push(`/`);
           },
           (error) => {
-            this.loading = false
+            this.loading = false;
             this.message =
               (error.response && error.response.data) ||
               error.message ||
-              error.toString()
+              error.toString();
           }
-        )
+        );
       }
     },
 
-    register(){
-      this.$router.push('/register');
-    }
-
-  }
-}
+    register() {
+      this.$router.push("/register");
+    },
+  },
+};
 </script>
 
 
@@ -113,10 +116,9 @@ label {
 
 .card-container.card {
   max-width: 350px !important;
-  padding: 40px 40px;
 }
 
-.card .card-container{
+.card .card-container {
   background-color: $white;
 }
 
@@ -128,15 +130,12 @@ label {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
-.card-title{
+.card-title {
   font-weight: $titleWeight;
-  font-size : 30px;
-  color : $green;
+  font-size: 30px;
+  color: $green;
 }
 
 .profile-img-card {

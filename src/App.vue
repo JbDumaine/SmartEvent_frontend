@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid id="app" class="h-100">
+  <b-container fluid id="app" class="h-100 my-auto">
     <router-view />
   </b-container>
 </template>
@@ -27,5 +27,25 @@ body {
 .btn-secondary:hover {
   background-color: $lightPink !important;
   border-color: $lightPink !important;
+}
+
+.btn-danger {
+  background-color: $bloodColor !important;
+  border-color: $bloodColor !important;
+}
+
+.btn-danger:hover {
+  background-color: $lightBloodColor !important;
+  border-color: $lightBloodColor !important;
+}
+
+.btn-success {
+  background-color: $silverTree !important;
+  border-color: $silverTree !important;
+}
+
+.btn-success:hover {
+  background-color: $lightSilverTree!important;
+  border-color: $lightSilverTree !important;
 }
 </style>

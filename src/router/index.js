@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Welcome from '../views/Welcome.vue'
+import Invitation from '../views/Invitation.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: `/register`,
     name: `Register`,
     component: Register
+  },
+  {
+    path: `/invitation-request/:invitation_token`,
+    name: `Invitation`,
+    component: Invitation
   }
 ]
 
