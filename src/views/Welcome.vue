@@ -1,5 +1,5 @@
 <template>
-  <b-col md="12" class="">
+  <b-col cols="12" class="my-auto">
     <b-card title="Welcome to Smart Event" class="text-center welcome-card">
       <img id="logo-img" src="../assets/logo_SE.png" class="mt-4" />
       <b-card-text class="row mt-4">
@@ -24,15 +24,23 @@
 export default {
   name: `Welcome`,
   components: {},
-  computed: {},
   mounted() {},
+  computed: {
+    loggedIn() {
+      return this.$store.state.auth.status.loggedIn;
+    },
+  },
+  created() {
+    if (this.loggedIn) {
+      this.$router.push(`/home`);
+    }
+  },
 };
 </script>
 <style lang="scss" scoped>
 .card {
   background-color: $white;
   color: $green;
-  max-width: 350px !important;
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
   margin-top: 0px;

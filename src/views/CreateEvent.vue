@@ -1,7 +1,9 @@
 <template>
-  <b-card title="Organize an event" class="text-center welcome-card">
-    <EventForm />
-  </b-card>
+  <b-col cols="12" class="my-auto">
+    <b-card title="Organize an event" class="text-center welcome-card">
+      <EventForm />
+    </b-card>
+  </b-col>
 </template>
 <script>
 import EventForm from "../components/Event/EventForm.vue";
@@ -28,7 +30,6 @@ export default {
 .card {
   background-color: $white;
   color: $green;
-  max-width: 350px !important;
   margin: 0 auto 25px;
   margin-top: 0px;
   margin-top: 50px;
