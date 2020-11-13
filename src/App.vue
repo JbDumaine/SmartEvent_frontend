@@ -77,4 +77,8 @@ body {
   font-size: 30px;
   color: $green;
 }
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: $lightSilverTree; // Choose your own color here
+ }
 </style>
