@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Header/>
     <Carousel/>
     <div id="page-content">
       <h1>VOS EVENEMENTS</h1>
