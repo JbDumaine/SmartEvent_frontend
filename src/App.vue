@@ -20,12 +20,20 @@ export default {
 };
 </script>
 <style lang="scss">
+
+
 html {
   height: 100%;
 }
 body {
   height: 100%;
 }
+
+#app{
+  padding: 0px;
+  margin: 0px;
+}
+
 .btn-primary {
   background-color: $blue !important;
   border-color: $blue !important;
