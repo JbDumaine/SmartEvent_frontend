@@ -23,8 +23,9 @@
             <img id="event-img" src="../assets/logo_SE.png"/>
 
             <b-row>
-              <br>Liste des invités <br>
-              <b-button v-b-toggle.guests-collapse variant="primary">Afficher</b-button>
+              <b-card-text>Liste des invités
+                <b-button v-b-toggle.guests-collapse variant="primary">Afficher</b-button>
+              </b-card-text>
             </b-row>
 
             <b-row>
@@ -37,8 +38,13 @@
               </b-collapse>
             </b-row>
             
-            <br>Type d'événement :  {{ event.type }}
-            <br>Description :       {{ event.description }}
+            <b-card-text>
+              <br>Type d'événement :  {{ event.type }}
+              <br>Description :       {{ event.description }}
+            </b-card-text>
+            <b-row class="mt-3">
+              <b-button variant="success" v-b-modal.accept_modal>Liste de courses</b-button>
+            </b-row>
           </b-col>
         </b-row>
       </b-container>
@@ -48,6 +54,15 @@
       </router-link>
     </b-card>
   </b-col>
+
+  <b-modal 
+    id="accept_modal" 
+    title="Liste de courses">
+    <li v-for="item in items" :key="item.id">
+      {{ item.name }}
+    </li>
+  </b-modal>
+
 </b-form>
 </template>
 
@@ -64,7 +79,8 @@ export default {
         date: "13/11/2020",
         type: "Apéro",
         description: "On casse tout chez Etienne !"
-      }
+      },
+      items: [ {name:"Coca"}, {name:"Whisky"}, {name:"Vodka"} ]
     }
   },
   created() {
@@ -86,6 +102,10 @@ export default {
 
 <style scoped lang="scss">
 
+h1,h2,h3,h4,h5,h6,p,span,button,a{
+  font-family: 'Work Sans', sans-serif;
+}
+
 .card {
   background-color: $white !important;
   
@@ -95,16 +115,6 @@ label {
   margin-top: 10px;
 }
 
-a {
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  color: $pink !important;
-}
-a:hover {
-  color: $green !important;
-  text-decoration: none;
-}
 .card-title{
   text-align : center;
   font-weight: $titleWeight;
@@ -134,6 +144,11 @@ a:hover {
   position: absolute;
   right: 0;
   margin-right: 50px;
+}
+
+.modal-items {
+  font-size: 1rem;
+  color: $green;
 }
 
 </style>
