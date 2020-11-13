@@ -3,7 +3,7 @@
     <Carousel/>
     <div id="page-content">
       <h1>VOS EVENEMENTS</h1>
-      <h4>Catégorie évènement</h4>
+      <h4>Catégorie évènements</h4>
       <div id="card-wrapper">
         <b-card
         title="Nom évènement"
