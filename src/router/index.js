@@ -7,6 +7,7 @@ import Welcome from '../views/Welcome.vue'
 import Invitation from '../views/Invitation.vue'
 import CreateEvent from '../views/CreateEvent.vue'
 import Guest from '../views/Guest.vue'
+import EventDetail from '../views/EventDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [
     path: `/guests/:id`,
     name: `Guests`,
     component: Guest
+  },
+  {
+    path: `/eventDetail`,
+    name: `EventDetail`,
+    component: EventDetail
   }
 ]
 

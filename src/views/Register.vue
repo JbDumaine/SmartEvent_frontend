@@ -154,10 +154,6 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.card-container.card {
-  max-width: 350px !important;
-  padding: 40px 40px;
-}
 
 .card {
   background-color: #f7f7f7;
