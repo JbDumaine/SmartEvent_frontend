@@ -47,7 +47,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import User from "../models/user";
 
