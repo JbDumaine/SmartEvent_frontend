@@ -1,13 +1,14 @@
 <template>
   <b-col cols="12" class="my-auto">
     <b-card title="Register">
-      <img @click="getProfileImage()"
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
       <b-form name="form" @submit.prevent="handleRegister">
         <div v-if="!successful">
+          <div class="d-flex flex-column align-items-center">
+            <label for="file-input">
+            <img v-bind:src="previewImage" class="uploading-image mb-2"/>
+            </label>
+            <input id="file-input" type="file" accept="image/*" @change="uploadImage" />
+          </div>
           <b-form-group label="First Name" label-for="userFirstName">
             <b-form-input
               id="userFirstName"
@@ -78,6 +79,7 @@ export default {
       submitted: false,
       successful: false,
       message: ``,
+      previewImage: "//ssl.gstatic.com/accounts/ui/avatar_2x.png",
     };
   },
   computed: {
@@ -108,18 +110,22 @@ export default {
         }
       );
     },
-    getProfileImage(){
-      
-    }
+    uploadImage(e) {
+      const image = e.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(image);
+      reader.onload = (e) => {
+        this.previewImage = e.target.result;
+        console.log(this.previewImage);
+      };
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
-
 .card {
   background-color: $white !important;
-  
 }
 label {
   display: block;
@@ -136,10 +142,15 @@ a:hover {
   color: $green !important;
   text-decoration: none;
 }
-.card-title{
-  text-align : center;
+
+#file-input{
+  display : none;
+}
+.card-title {
+  text-align: center;
   font-weight: $titleWeight;
-  color : $green;
+  color: $green;
+  
   margin-bottom: 10px;
 }
 
