@@ -43,7 +43,7 @@ const routes = [
     component: CreateEvent
   },
   {
-    path: `/guests/:id`,
+    path: `/guest`,
     name: `Guests`,
     component: Guest
   },
