@@ -20,7 +20,7 @@
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </b-card-text>
         </div>
-        <b-button href="#" class="event-btn" variant="primary">ACCEDER</b-button>
+        <b-button class="event-btn" variant="primary" @click="goToEventDetail(0)">ACCEDER</b-button>
         </b-card>
         <b-card
         title="Nom évènement"
@@ -88,6 +88,11 @@ export default {
   components: {
     Carousel,
     Footer
+  },
+  methods : {
+    goToEventDetail: function(id) {
+      this.$router.push(`eventDetail/${id}`);
+    }
   },
   computed: {
     currentUser() {
