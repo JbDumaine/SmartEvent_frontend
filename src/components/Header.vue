@@ -5,9 +5,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">Home</b-nav-item>
-          <b-nav-item href="#">Events</b-nav-item>
-          <b-nav-item href="#">Guests</b-nav-item>
+          <b-link to="/">Home</b-link>
+          <b-link to="/create/event">Events</b-link>
+          <b-link to="/guest">Guests</b-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -34,6 +34,19 @@ export default {
 ::v-deep .navbar-light .navbar-nav .nav-link {
   color: $white;
 }
+a{
+  color: $white;
+  font-size: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.router-link-exact-active {
+color : $blue;
+font-weight : bold;
+text-decoration: none ;
+}
+
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
   color: white;
