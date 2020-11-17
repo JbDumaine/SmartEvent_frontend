@@ -3,10 +3,8 @@
   <b-col cols="12" class="my-auto">
       <img id="logo-img" src="../assets/logo_SE.png"/>
 
-    <b-card 
-      title="Détails d'un événement"
-      class="mb-2"
-    >
+    <b-card class="mb-2">
+      <b-card-title>Événement {{ event.id }} </b-card-title>
       <b-container>
         <b-row>
           <b-col>
@@ -73,6 +71,7 @@ export default {
     return {
       guests: [ {name: "gui"}, {name: "jb"}],
       event: {
+        id: 0,
         name: "Un événement",
         address: "Chez Etienne",
         flyer: "Flyer moche",

@@ -48,7 +48,7 @@ const routes = [
     component: Guest
   },
   {
-    path: `/eventDetail`,
+    path: `/eventDetail/:eventId`,
     name: `EventDetail`,
     component: EventDetail
   }
