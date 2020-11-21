@@ -21,7 +21,7 @@
                 {{ event.name}}
               </b-card-text>
             </div>
-            <b-button class="event-btn" variant="primary" @click="goToEventDetail(0)">ACCEDER</b-button>
+            <b-button class="event-btn" variant="primary" @click="goToEventDetail(event.id)">ACCEDER</b-button>
           </b-card>
         </div>
 

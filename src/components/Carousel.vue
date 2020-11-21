@@ -58,10 +58,8 @@ export default {
   name: `Carousel`,
   methods: {
     onSlideStart(slide) {
-      console.log("Mon dieu! Je commence à glisser!");
     },
     onSlideEnd(slide) {
-      console.log("Mon dieu! Je fini de glisser!");
     }
   }
 }

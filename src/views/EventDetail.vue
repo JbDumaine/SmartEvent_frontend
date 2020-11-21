@@ -70,15 +70,7 @@ export default {
   data() {
     return {
       guests: [ {name: "gui"}, {name: "jb"}],
-      event: {
-        id: 0,
-        name: "Un événement",
-        address: "Chez Etienne",
-        flyer: "Flyer moche",
-        date: "13/11/2020",
-        type: "Apéro",
-        description: "On casse tout chez Etienne !"
-      },
+      event: this.$store.state.event,
       items: [ {name:"Coca"}, {name:"Whisky"}, {name:"Vodka"} ]
     }
   },
@@ -89,6 +81,8 @@ export default {
       console.log("je ne suis pas connecté !");
       // this.$router.push(`/home`)
     }
+
+    this.$store.dispatch("getEvent", this.$route.params.eventId);
 
     this.guests.push( 
       { name: "Etienne"},
