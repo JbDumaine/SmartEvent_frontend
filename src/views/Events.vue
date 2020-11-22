@@ -8,7 +8,7 @@
           </b-link>
           <div class="d-flex flex-row align-items-center">
             <b-form-input class="mx-2" placeholder="Search"></b-form-input>
-            <div v-if="weightScreen > 375">
+            <div v-if="widthScreen > 375">
               <font-awesome-icon icon="search" class="m-3" />
             </div>
           </div>
@@ -102,8 +102,8 @@ export default {
     currentUser() {
       return this.$store.state.auth.user;
     },
-    weightScreen() {
-      return this.$store.state.weightScreen;
+    widthScreen() {
+      return this.$store.state.widthScreen;
     },
   },
   mounted() {

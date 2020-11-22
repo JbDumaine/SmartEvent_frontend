@@ -8,12 +8,12 @@
           </div>
           <div class="d-flex flex-row align-items-center">
             <b-form-input class="mx-2" placeholder="Search"></b-form-input>
-            <div v-if="weightScreen > 375">
+            <div v-if="widthScreen > 375">
               <font-awesome-icon icon="search" class="m-3" />
             </div>
           </div>
         </div>
-        <b-table :items="event.guests" :fields="fields" striped responsive="sm" v-if="weightScreen < 800">
+        <b-table :items="event.guests" :fields="fields" striped responsive="sm" v-if="widthScreen < 800">
           <template #cell(show_details)="row">
             <b-button size="sm" @click="row.toggleDetails" class="mr-2">
               {{ row.detailsShowing ? "Hide" : "Show" }} Details
@@ -107,8 +107,8 @@ export default {
     currentUser() {
       return this.$store.state.auth.user;
     },
-    weightScreen() {
-      return this.$store.state.weightScreen;
+    widthScreen() {
+      return this.$store.state.widthScreen;
     },
   },
   mounted() {
