@@ -35,6 +35,11 @@ body {
   margin: 0px;
 }
 
+.container{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .btn-primary {
   background-color: $blue !important;
   border-color: $blue !important;

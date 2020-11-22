@@ -3,9 +3,9 @@
     <b-col cols="12">
       <b-card title="Events" class="text-center mt-2">
         <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <font-awesome-icon icon="plus-circle" class="m-3" :onClick="createEvent"/>
-          </div>
+          <b-link to="/create/event">
+            <font-awesome-icon icon="plus-circle" class="m-3"/>
+          </b-link>
           <div class="d-flex flex-row align-items-center">
             <b-form-input class="mx-2" placeholder="Search"></b-form-input>
             <div v-if="weightScreen > 375">
@@ -21,6 +21,14 @@
           </template>
           <template #row-details="row">
             <b-card>
+              <b-row class="mb-2">
+                <b-col sm="4" md="3" class="text-center-sm-left font-weight-bold">Date :</b-col>
+                <b-col sm="8" md="9" class="text-center-sm-left">{{ row.item.date }}</b-col>
+              </b-row>
+              <b-row class="mb-2">
+                <b-col sm="4" md="3" class="text-center-sm-left font-weight-bold">Heure :</b-col>
+                <b-col sm="8" md="9" class="text-center-sm-left">{{ row.item.heure }}</b-col>
+              </b-row>
               <b-row class="mb-2">
                 <b-col sm="4" md="3" class="text-center-sm-left font-weight-bold">Address:</b-col>
                 <b-col sm="8" md="9" class="text-center-sm-left">{{ row.item.address.street }}({{row.item.address.suite }}), {{ row.item.address.city }}</b-col>
@@ -44,7 +52,6 @@ export default {
     return {
       fields: [
         "title",
-        "date",
         "organizer",
         { key: "show_details", sortable: false, label: "" },
       ],
@@ -53,6 +60,7 @@ export default {
           id: 1,
           title: "Etienne's Birthday",
           date: "10-11-2020",
+          heure:"19h00",
           organizer: "Etienne Noroy",
           description: "Welcome to my Birthday Party",
           address: {
@@ -71,6 +79,7 @@ export default {
           id: 2,
           title: "Jb party",
           date: "01-12-2020",
+          heure:"22h00",
           organizer: "Jb Lemaine",
           description: "Come to my appartment for a great party ! ",
           address: {
@@ -117,5 +126,7 @@ export default {
 }
 .svg-inline--fa {
   color: $pink;
+  width: 25px;
+  height: 25px;
 }
 </style>
