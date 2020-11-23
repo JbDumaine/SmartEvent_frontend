@@ -37,6 +37,10 @@
                 <b-col sm="4" md="3" class="text-center-sm-left font-weight-bold">Description:</b-col>
                 <b-col sm="8" md="9" class="text-center-sm-left" >{{ row.item.description }}</b-col>
               </b-row>
+              <b-row class="mb-2 justify-content-center">
+                  <font-awesome-icon icon="edit" class="m-3" />
+                  <font-awesome-icon icon="trash" class="m-3" />
+              </b-row>
             </b-card>
           </template>
         </b-table>
