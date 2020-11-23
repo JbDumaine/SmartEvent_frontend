@@ -13,7 +13,13 @@
             </div>
           </div>
         </div>
-        <b-table :items="event.guests" :fields="fields" striped responsive="sm" v-if="widthScreen < 800">
+        <b-table
+          :items="event.guests"
+          :fields="fields"
+          striped
+          responsive="sm"
+          v-if="widthScreen < 800"
+        >
           <template #cell(show_details)="row">
             <b-button size="sm" @click="row.toggleDetails" class="mr-2">
               {{ row.detailsShowing ? "Hide" : "Show" }} Details
@@ -29,10 +35,20 @@
                 <b-col sm="3" class="text-sm-right"><b>Phone:</b></b-col>
                 <b-col>{{ row.item.phone }}</b-col>
               </b-row>
+              <b-row class="mb-2 justify-content-center">
+                  <font-awesome-icon icon="edit" class="m-3" />
+                  <font-awesome-icon icon="trash" class="m-3" />
+              </b-row>
             </b-card>
           </template>
-          </b-table>
-        <b-table :items="event.guests" :fields="fieldsComplete" striped responsive="sm" v-else>
+        </b-table>
+        <b-table
+          :items="event.guests"
+          :fields="fieldsComplete"
+          striped
+          responsive="sm"
+          v-else
+        >
         </b-table>
       </b-card>
     </b-col>
@@ -126,5 +142,7 @@ export default {
 }
 .svg-inline--fa {
   color: $pink;
+  width: 25px;
+  height: 25px;
 }
 </style>
