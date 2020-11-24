@@ -1,5 +1,5 @@
 <template>
-  <b-row class="mx-auto justify-content-center">
+  <b-row class="mx-auto justify-content-center mt-5">
     <b-col cols="12">
       <b-card title="Events" class="text-center mt-2">
         <div class="d-flex justify-content-between align-items-center">
