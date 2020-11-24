@@ -5,15 +5,16 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-link to="/">Home</b-link>
-          <b-link to="/events">Events</b-link>
-          <b-link to="/guests">Guests</b-link>
+          <b-nav-item><b-link to="/">Home</b-link></b-nav-item>
+          <b-nav-item><b-link to="/events">Events</b-link></b-nav-item>
+          <b-nav-item><b-link to="/guests">Guests</b-link></b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item href="#">Legal Notice</b-nav-item>
-          <b-nav-item id="logout-item-nav" href="#">Logout</b-nav-item>
+          <b-nav-item><b-link to="/legal-notice">Legal Notice</b-link></b-nav-item>
+          
+          <b-nav-item id="logout-item-nav">Logout</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
