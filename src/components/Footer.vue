@@ -1,10 +1,15 @@
 <template>
   <div id="footer-wrapper">
-    <div id="footer-container">
-      <div id="copyright" class="footer-content-container" v-if="widthScreen > 800">
+    <b-row id="footer-container">
+      <b-col lg="4" cols="12" id="copyright" class="text-center ">
         <p>© Copyright 2020 - SMARTEVENT.COM | Tous droits réservés</p>
-      </div>
-      <div id="socials_container" class="footer-content-container">
+      </b-col>
+      <b-col
+        lg="4"
+        cols="12"
+        id="socials_container"
+        class="text-center mt-2"
+      >
         <img
           src="../../public/img/icons/facebook-app-symbol.png"
           alt=""
@@ -20,20 +25,16 @@
           alt=""
           class="social-item"
         />
-      </div>
-      <div
-        id="footer_menu_container"
-        class="footer-content-container"
-        v-if="widthScreen > 800"
-      >
+      </b-col>
+      <b-col lg="4" cols="12" class="text-center mt-2">
         <ul id="nav-footer-container">
           <li class="nav-footer-item"><a href="#">Contact</a></li>
           <li class="nav-footer-item"><a href="#">Confidentialité</a></li>
           <li class="nav-footer-item"><a href="#">Mentions Légales</a></li>
           <li class="nav-footer-item"><a href="#">CGV</a></li>
         </ul>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -44,7 +45,6 @@ export default {
     widthScreen() {
       return this.$store.state.widthScreen;
     },
-    
   },
 };
 </script>
@@ -52,10 +52,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 a {
-    font-size: 10px;
+  font-size: 10px;
 }
-ul{
-    padding-left: 0;
+ul {
+  padding-left: 0;
 }
 #footer-container {
   display: flex;
