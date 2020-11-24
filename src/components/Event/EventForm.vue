@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-4">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="event-form">
       <b-form-group
         id="input-group-event-type"

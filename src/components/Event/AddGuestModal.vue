@@ -73,6 +73,9 @@
           </template>
         </b-table>
       </b-col>
+      <b-col cols="12" class="text-right">
+        <b-button variant="success">Create a guest</b-button>
+      </b-col>
     </b-row>
   </b-modal>
 </template>

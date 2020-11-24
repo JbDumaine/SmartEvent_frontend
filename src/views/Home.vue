@@ -5,7 +5,7 @@
       <h1>YOUR LAST EVENTS</h1>
       <div id="card-wrapper">
 
-        <div v-for="event in events" :key="event.id">
+        <div v-for="event in events" :key="event.id" class="mt-3">
           <b-card
             title="Nom évènement"
             img-src="https://picsum.photos/600/300/?image=25"
