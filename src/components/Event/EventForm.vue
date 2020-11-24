@@ -98,12 +98,12 @@
       >
       <b-row class="my-3">
         <b-col cols="6">
+          <b-button class="w-100" type="reset" variant="danger">Reset</b-button>
+        </b-col>
+        <b-col cols="6">
           <b-button class="w-100" type="submit" variant="primary"
             >Save</b-button
           >
-        </b-col>
-        <b-col cols="6">
-          <b-button class="w-100" type="reset" variant="danger">Reset</b-button>
         </b-col>
       </b-row>
     </b-form>

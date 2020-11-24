@@ -53,7 +53,12 @@
               {{ row.detailsShowing ? "Hide" : "Show" }} Details
             </b-button>
           </template>
-
+          <template #cell(remove_guest)="row">
+            <font-awesome-icon
+              @click="row.toggleDetails"
+              icon="times"
+            />
+          </template>
           <template #row-details="row">
             <b-card>
               <b-row class="mb-2">
@@ -88,7 +93,17 @@ export default {
       selectedGuest: [],
       guestsList: [],
       isLoading: false,
-      fields: ['name', 'username', { key: "show_details", sortable: false, label: "" },],
+      fields: [
+        "name",
+        "username",
+        { key: "show_details", sortable: false, label: "" },
+        {
+          key: "remove_guest",
+          thClass: "d-none",
+          sortable: false,
+          label: "",
+        },
+      ],
       event: {
         guests: [
           {
@@ -162,14 +177,21 @@ export default {
     clearAll() {
       this.selectedGuest = [];
     },
-    addGuestsToEvent(){
-        this.selectedGuest.forEach((guest)=>{
-            this.event.guests.push(guest);
-        });
-        this.selectedGuest = [];
-    }
+    addGuestsToEvent() {
+      this.selectedGuest.forEach((guest) => {
+        this.event.guests.push(guest);
+      });
+      this.selectedGuest = [];
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
+
+
+.svg-inline--fa {
+  color: $bloodColor;
+  width: 25px;
+  height: 25px;
+}
 </style>
