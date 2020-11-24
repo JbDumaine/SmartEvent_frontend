@@ -150,7 +150,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      console.log(this.eventForm);
     },
     onReset(evt) {
       evt.preventDefault();

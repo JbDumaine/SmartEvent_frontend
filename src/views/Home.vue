@@ -2,8 +2,7 @@
   <div class="home">
     <Carousel/>
     <div id="page-content">
-      <h1>VOS EVENEMENTS</h1>
-      <h4>Catégorie évènements</h4>
+      <h1>YOUR LAST EVENTS</h1>
       <div id="card-wrapper">
 
         <div v-for="event in events" :key="event.id">
