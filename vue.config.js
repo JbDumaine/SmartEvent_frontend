@@ -1,11 +1,13 @@
 module.exports = {
   pwa: {
-    name:'Smart Event',
+
+    name: 'Smart Event',
     short_name: 'SE',
     themeColor: '#E44FAA',
     msTileColor: '#000000',
     backgroundColor: '#ffffff',
     manifestOptions: {
+      display: 'standalone',
       icons: [
         {
           src: "img/icons/android-chrome-192x192.png",
