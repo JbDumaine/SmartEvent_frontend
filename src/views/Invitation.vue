@@ -1,11 +1,11 @@
 <template>
-  <div class="col-md-12">
+  <b-col cols="12" class="my-auto">
     <b-card
       :title="title"
       img-src="../assets/logo_SE.png"
       img-alt="Smart Event Logo"
       img-top
-      class="mb-2"
+      class="mb-2 text-center"
     >
       <b-card-text class="mt-4">
         {{ eventOwner.event.message }}
@@ -21,13 +21,21 @@
     </b-card>
 
     <b-modal id="decline_modal" hide-footer hide-header>
-      <p id="modal_invitation_decline" class="my-4 text-center modal-invitation">{{eventOwner.name}} is very sad ! <font-awesome-icon icon="sad-cry" /></p>
+      <p
+        id="modal_invitation_decline"
+        class="my-4 text-center modal-invitation"
+      >
+        {{ eventOwner.name }} is very sad ! <font-awesome-icon icon="sad-cry" />
+      </p>
     </b-modal>
-    
+
     <b-modal id="accept_modal" hide-footer hide-header>
-      <p id="modal_invitation_accept" class="my-4 text-center modal-invitation">{{eventOwner.name}} is very happy ! <font-awesome-icon icon="smile-beam" /></p>
+      <p id="modal_invitation_accept" class="my-4 text-center modal-invitation">
+        {{ eventOwner.name }} is very happy !
+        <font-awesome-icon icon="smile-beam" />
+      </p>
     </b-modal>
-  </div>
+  </b-col>
 </template>
 
 <script>
@@ -55,11 +63,9 @@ export default {
 
 
 <style lang="scss" scoped>
-
 .card {
   background-color: $white;
   color: $green;
-  max-width: 350px !important;
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
   margin-top: 0px;
@@ -68,7 +74,7 @@ export default {
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.modal-invitation{
+.modal-invitation {
   font-size: 2rem;
   font-weight: $titleWeight;
 }
@@ -78,5 +84,9 @@ export default {
 
 #modal_invitation_accept {
   color: $silverTree;
+}
+.card-img, .card-img-top {
+  max-width: 500px;
+  margin: auto;
 }
 </style>

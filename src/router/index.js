@@ -6,7 +6,10 @@ import Register from '../views/Register.vue'
 import Welcome from '../views/Welcome.vue'
 import Invitation from '../views/Invitation.vue'
 import CreateEvent from '../views/CreateEvent.vue'
+import Guests from '../views/Guests.vue'
+import Events from '../views/Events.vue'
 import EventDetail from '../views/EventDetail.vue'
+import LegalNotice from '../views/LegalNotice.vue'
 
 Vue.use(VueRouter)
 
@@ -42,9 +45,25 @@ const routes = [
     component: CreateEvent
   },
   {
-    path: `/eventDetail`,
+    path: `/guests`,
+    name: `Guests`,
+    component: Guests
+  },
+  {
+    path: `/events`,
+    name: `Events`,
+    component: Events
+  },
+
+  {
+    path: `/eventDetail/:eventId`,
     name: `EventDetail`,
     component: EventDetail
+  },
+  {
+    path: `/legal-notice`,
+    name: `LegalNotice`,
+    component: LegalNotice
   }
 ]
 

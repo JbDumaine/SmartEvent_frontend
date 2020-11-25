@@ -47,7 +47,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import User from "../models/user";
 
@@ -67,7 +66,7 @@ export default {
   },
   created() {
     if (this.loggedIn) {
-      this.$router.push(`/home`);
+      this.$router.push(`/`);
     }
   },
   methods: {
