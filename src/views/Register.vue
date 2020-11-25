@@ -1,5 +1,5 @@
 <template>
-  <b-col cols="12" class="my-auto">
+  <b-col cols="12" class="mt-4">
     <b-card title="Register">
       <b-form name="form" @submit.prevent="handleRegister">
         <div v-if="!successful">

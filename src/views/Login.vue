@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12">
+  <div class="col-md-12 mt-4">
     <div class="card card-container px-2 pt-0">
       <div class="card-title text-center">Login</div>
       <img
