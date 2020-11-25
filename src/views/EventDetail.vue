@@ -241,16 +241,6 @@ export default {
       return this.event.items.length;
     },
   },
-  created() {
-    if (this.loggedIn) {
-    } else {
-      this.$router.push(`/home`)
-    }
-
-    this.$store.dispatch("getEvent", this.$route.params.eventId);
-
-    this.guests.push({ name: "Etienne" }, { name: "Yves" }, { name: "Nary" });
-  },
 };
 </script>
 
