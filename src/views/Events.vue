@@ -77,7 +77,7 @@ export default {
               lng: "81.1496",
             },
           },
-          type: "birthday party",
+          type: "Birthday party",
         },
         {
           id: 2,
