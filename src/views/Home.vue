@@ -5,26 +5,27 @@
     <div id="page-content">
       <h1>YOUR LAST EVENTS</h1>
       <div id="card-wrapper">
-
-        <div v-for="event in events" :key="event.id" class="mt-3">
-          <b-card
-            :title="event.name"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Event Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2">
-            <div class="adr_container">
-              <img src="../../public/img/icons/icons8-marker-50.png" alt="">
-              <b-card-text class="event-adr">
-                {{ event.location}}
-              </b-card-text>
-            </div>
-            <b-button class="event-btn" variant="primary" @click="goToEventDetail(event.id)">ACCESS</b-button>
-          </b-card>
-        </div>
-
+        <ul>
+          <li v-for="item in eventContent" :key="item.cardTitle">
+              <b-card
+                v-bind:title="item.cardTitle"
+                v-bind:img-src="item.cardImg"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2"
+                >
+                <div class="adr_container">
+                  <img src="../../public/img/icons/icons8-marker-50.png" alt="">
+                  <b-card-text class="event-adr">
+                    {{ item.cardAdr }}
+                  </b-card-text>
+                </div>
+                <b-button href="#" class="event-btn" variant="primary">ACCEDER</b-button>
+              </b-card>
+          </li>
+        </ul>
       </div>
     </div>
     <Footer/>
@@ -37,6 +38,30 @@ import Carousel from "@/components/Carousel.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
+  data(){
+    return {
+      eventContent:[{
+        cardTitle: "Rave Party",
+        cardImg:"https://picsum.photos/600/300/?image=25",
+        cardAdr: "8 rue des Potiers",
+      },
+      {
+        cardTitle: "Reggae Party",
+        cardImg:"https://picsum.photos/600/300/?image=25",
+        cardAdr: "10 rue des Potiers",
+      },
+      {
+        cardTitle: "Rap Party",
+        cardImg:"https://picsum.photos/600/300/?image=25",
+        cardAdr: "12 rue des Potiers",
+      },
+      {
+        cardTitle: "R&B Party",
+        cardImg:"https://picsum.photos/600/300/?image=25",
+        cardAdr: "15 rue des Potiers",
+      },]
+    }
+  },
   name: `Home`,
   components: {
     Carousel,
@@ -84,10 +109,11 @@ h1,h2,h3,h4,h5,h6,p,span,button,a{
   padding: 2%;
 }
 
-#card-wrapper{
+#card-wrapper > ul{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  list-style: none;
 }
 
 .event-btn{
