@@ -21,8 +21,7 @@
             />
           </b-row>
           <b-row>
-            <b-col md="6" class="text-center">
-              <b-card-text>
+            <b-col md="6" class="d-flex flex-column justify-content-center">
                 <div class="border-bottom mb-3">
                   <h4>When</h4>
                   <h5>{{ event.date }}</h5>
@@ -35,7 +34,6 @@
                   <h5>{{ event.address.city }}</h5>
                   <h5>{{ event.address.zipcode }}</h5>
                 </div>
-              </b-card-text>
             </b-col>
             <b-col md="6" class="text-center" v-if="this.event.guests">
               <iframe
@@ -48,10 +46,6 @@
                 aria-hidden="false"
                 tabindex="0"
               ></iframe>
-              <b-card-text
-                class="d-flex flex-column justify-content-center align-items-center"
-              >
-              </b-card-text>
             </b-col>
           </b-row>
           <b-row class="border-top-sm pt-2">
