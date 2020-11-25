@@ -1,5 +1,6 @@
 module.exports = {
   pwa: {
+    name:'Smart Event',
     short_name: 'SE',
     themeColor: '#E44FAA',
     msTileColor: '#000000',
