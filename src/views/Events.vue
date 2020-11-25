@@ -205,8 +205,21 @@ export default {
           eventDate: "10-11-2020",
           eventTime: "19h00",
           description: "Welcome to my Birthday Party",
+
+          address: {
+            street: "Rue du Paradie",
+            suite: "Apt. 25",
+            city: "Nuage City",
+            zipcode: "64584-54544",
+            geo: {
+              lat: "-37.3159",
+              lng: "81.1496",
+            },
+          },
+          type: "Birthday party",
           location: "Rue du Paradie(Apt. 25), Nuage City",
           type: "birthday party",
+
         },
         {
           id: 2,
