@@ -216,10 +216,8 @@ export default {
               lng: "81.1496",
             },
           },
-          type: "Birthday party",
           location: "Rue du Paradie(Apt. 25), Nuage City",
-          type: "birthday party",
-
+          type: "Birthday party",
         },
         {
           id: 2,
