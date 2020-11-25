@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = `https://reqres.in/api/`
+const API_URL = `http://smartevent-api.tk/`
 
 class AuthService {
   async login(user) {
@@ -24,10 +24,12 @@ class AuthService {
   }
 
   register(user) {
+    console.log(user)
     return axios.post(API_URL + `register`, {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
+      phoneNumber: user.phoneNumber,
       password: user.password
     })
   }

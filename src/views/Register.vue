@@ -5,14 +5,19 @@
         <div v-if="!successful">
           <div class="d-flex flex-column align-items-center">
             <label for="file-input">
-            <img v-bind:src="previewImage" class="uploading-image mb-2"/>
+              <img v-bind:src="previewImage" class="uploading-image mb-2" />
             </label>
-            <input id="file-input" type="file" accept="image/*" @change="uploadImage" />
+            <input
+              id="file-input"
+              type="file"
+              accept="image/*"
+              @change="uploadImage"
+            />
           </div>
           <b-form-group label="First Name" label-for="userFirstName">
             <b-form-input
               id="userFirstName"
-              v-model="user.first_name"
+              v-model="user.firstName"
               type="text"
               required
               placeholder="Enter your First Name."
@@ -22,10 +27,20 @@
           <b-form-group label="Last Name" label-for="userLastName">
             <b-form-input
               id="userLastName"
-              v-model="user.last_name"
+              v-model="user.lastName"
               type="text"
               required
               placeholder="Enter your Last Name."
+              class="form-control"
+            />
+          </b-form-group>
+          <b-form-group label="Phone Number" label-for="phone_number">
+            <b-form-input
+              id="phone_number"
+              v-model="user.phoneNumber"
+              type="text"
+              required
+              placeholder="Enter your phone number."
               class="form-control"
             />
           </b-form-group>
@@ -143,8 +158,8 @@ a:hover {
   text-decoration: none;
 }
 
-#file-input{
-  display : none;
+#file-input {
+  display: none;
 }
 .card-title {
   text-align: center;
@@ -152,7 +167,6 @@ a:hover {
   color: $green;
   margin-bottom: 10px;
 }
-
 
 .card {
   background-color: #f7f7f7;
