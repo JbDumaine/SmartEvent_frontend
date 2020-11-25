@@ -1,12 +1,13 @@
 <template>
-  <b-form name="form">
-    <b-card class="mt-5">
-      <b-card-title class="border-bottom mb-4"
-        >Welcome to the party of {{ event.organizer }}
-        <h2>{{ event.title }}</h2></b-card-title
-      >
-      <b-container class="">
-        <b-row class="d-flex justify-content-end">
+  <b-row class="mx-auto justify-content-center mt-5">
+    <b-col cols="12">
+      <b-card class="text-center mt-2">
+        <b-card-title
+          >Welcome to the party of {{ event.organizer }}
+          <h2>{{ event.title }}</h2></b-card-title
+        >
+        <b-container class="">
+          <b-row class="d-flex justify-content-end">
             <font-awesome-icon
               v-if="itemsCount > 0"
               icon="carrot"
@@ -18,51 +19,60 @@
               v-b-modal.guests_modal
               class="mb-3"
             />
-        </b-row>
-        <b-row>
-          <b-col md="6" class="text-center">
-            <b-card-text>
-              <div class="border-bottom mb-3">
-                <h4>When</h4>
-                <h5>{{ event.date }}</h5>
-                <h5>{{ event.heure }}</h5>
-              </div>
-              <div class="border-bottom mb-3">
-                <h4>Where</h4>
-                <h5>{{ event.address.street }}</h5>
-                <h5 v-if="event.address.suite">{{ event.address.suite }}</h5>
-                <h5>{{ event.address.city }}</h5>
-                <h5>{{ event.address.zipcode }}</h5>
-              </div>
+          </b-row>
+          <b-row>
+            <b-col md="6" class="text-center">
+              <b-card-text>
+                <div class="border-bottom mb-3">
+                  <h4>When</h4>
+                  <h5>{{ event.date }}</h5>
+                  <h5>{{ event.heure }}</h5>
+                </div>
+                <div class="border-bottom mb-3">
+                  <h4>Where</h4>
+                  <h5>{{ event.address.street }}</h5>
+                  <h5 v-if="event.address.suite">{{ event.address.suite }}</h5>
+                  <h5>{{ event.address.city }}</h5>
+                  <h5>{{ event.address.zipcode }}</h5>
+                </div>
+              </b-card-text>
+            </b-col>
+            <b-col md="6" class="text-center" v-if="this.event.guests">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.1799356525235!2d1.4584814154737764!3d43.58196827912379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebc67b217765f%3A0xc87c7c7e8a14c9a9!2s62%20Rue%20du%20Midi%2C%2031400%20Toulouse!5e0!3m2!1sfr!2sfr!4v1606315912677!5m2!1sfr!2sfr"
+                width="300"
+                height="225"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+              <b-card-text
+                class="d-flex flex-column justify-content-center align-items-center"
+              >
+              </b-card-text>
+            </b-col>
+          </b-row>
+          <b-row class="border-top-sm pt-2">
+            <b-card-text class="p-3">
+              {{ event.description }}
             </b-card-text>
-          </b-col>
-          <b-col md="6" class="text-center" v-if="this.event.guests">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.1799356525235!2d1.4584814154737764!3d43.58196827912379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebc67b217765f%3A0xc87c7c7e8a14c9a9!2s62%20Rue%20du%20Midi%2C%2031400%20Toulouse!5e0!3m2!1sfr!2sfr!4v1606315912677!5m2!1sfr!2sfr" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            <b-card-text
-              class="d-flex flex-column justify-content-center align-items-center"
-            >
-
-            </b-card-text>
-          </b-col>
-        </b-row>
-        <b-row class="border-top-sm pt-2">
-          <b-card-text>
-            {{ event.description }}
-          </b-card-text>
-        </b-row>
-      </b-container>
-    </b-card>
-    <b-modal id="guests_modal" title="Guests">
-      <div v-for="guest in this.event.guests" :key="guest.id">
-        {{ guest.name }}
-      </div>
-    </b-modal>
-    <b-modal id="shopping_modal" title="Shopping">
-      <div v-for="item in this.event.items" :key="item.id">
-        {{ item.name }} x {{ item.quantity }}
-      </div>
-    </b-modal>
-  </b-form>
+          </b-row>
+        </b-container>
+      </b-card>
+      <b-modal id="guests_modal" title="Guests">
+        <div v-for="guest in this.event.guests" :key="guest.id">
+          {{ guest.name }}
+        </div>
+      </b-modal>
+      <b-modal id="shopping_modal" title="Shopping">
+        <div v-for="item in this.event.items" :key="item.id">
+          {{ item.name }} x {{ item.quantity }}
+        </div>
+      </b-modal>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
@@ -77,7 +87,8 @@ export default {
         date: "10-11-2020",
         heure: "19h00",
         organizer: "Etienne Noroy",
-        description: "Welcome to my Birthday Party, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel urna quis arcu vehicula aliquam at quis tellus. Sed vitae faucibus nulla, in sollicitudin leo. Morbi tincidunt massa eget eros mollis fringilla. Etiam imperdiet magna eu sapien consequat, id varius elit porta. Vestibulum suscipit turpis at ligula convallis ultricies. Suspendisse interdum metus ut tortor varius, at rutrum velit faucibus. Nunc laoreet leo ultrices, sagittis neque scelerisque, dapibus libero. Aliquam congue metus ac accumsan pulvinar. Mauris neque ante, facilisis eget imperdiet sit amet, luctus vel nulla. ",
+        description:
+          "Welcome to my Birthday Party, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel urna quis arcu vehicula aliquam at quis tellus. Sed vitae faucibus nulla, in sollicitudin leo. Morbi tincidunt massa eget eros mollis fringilla. Etiam imperdiet magna eu sapien consequat, id varius elit porta. Vestibulum suscipit turpis at ligula convallis ultricies. Suspendisse interdum metus ut tortor varius, at rutrum velit faucibus. Nunc laoreet leo ultrices, sagittis neque scelerisque, dapibus libero. Aliquam congue metus ac accumsan pulvinar. Mauris neque ante, facilisis eget imperdiet sit amet, luctus vel nulla. ",
         address: {
           street: "Rue du Paradie",
           suite: "Apt. 25",
@@ -89,7 +100,11 @@ export default {
           },
         },
         type: "Birthday party",
-        items: [{ name: "Coca", quantity : 1 }, { name: "Whisky", quantity : 2 }, { name: "Vodka", quantity : 5 }],
+        items: [
+          { name: "Coca", quantity: 1 },
+          { name: "Whisky", quantity: 2 },
+          { name: "Vodka", quantity: 5 },
+        ],
         guests: [
           {
             id: 1,
@@ -246,23 +261,20 @@ export default {
 
 <style scoped lang="scss">
 @media (max-width: 640px) {
-
-.svg-inline--fa {
-  color: $pink;
-  width: 30px;
-  height: 30px;
-  margin-right: 30px;
-}
-
-  .text-center.col-md-6{
-    margin-bottom : 20px;
-
-    iframe{
-    width : 200px;
-    height: 150px;
-    
+  .svg-inline--fa {
+    color: $pink;
+    width: 30px;
+    height: 30px;
+    margin-right: 30px;
   }
 
+  .text-center.col-md-6 {
+    margin-bottom: 20px;
+
+    iframe {
+      width: 200px;
+      height: 150px;
+    }
   }
 }
 h2 {
@@ -280,10 +292,10 @@ h4 {
   margin-right: 30px;
 }
 
-.text-center.col-md-6{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.text-center.col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h5,
