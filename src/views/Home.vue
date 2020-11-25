@@ -7,9 +7,9 @@
 
         <div v-for="event in events" :key="event.id" class="mt-3">
           <b-card
-            title="Nom évènement"
+            :title="event.name"
             img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
+            img-alt="Event Image"
             img-top
             tag="article"
             style="max-width: 20rem;"
@@ -17,10 +17,10 @@
             <div class="adr_container">
               <img src="../../public/img/icons/icons8-marker-50.png" alt="">
               <b-card-text class="event-adr">
-                {{ event.name}}
+                {{ event.location}}
               </b-card-text>
             </div>
-            <b-button class="event-btn" variant="primary" @click="goToEventDetail(event.id)">ACCEDER</b-button>
+            <b-button class="event-btn" variant="primary" @click="goToEventDetail(event.id)">ACCESS</b-button>
           </b-card>
         </div>
 
@@ -45,11 +45,13 @@ export default {
     events : [
       {
         id: 0,
-        name: "event0"
+        name: "Anniv JP",
+        location: "32 rue du ruisseau 75000 Paris"
       },
       {
         id:1,
-        name: "event1"
+        name: "Halloween",
+        location: "47 rue du midi 31400 Toulouse"
       }
     ]
   }},

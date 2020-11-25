@@ -2,7 +2,7 @@
   <div id="footer-wrapper">
     <b-row id="footer-container">
       <b-col lg="4" cols="12" id="copyright" class="text-center ">
-        <p>© Copyright 2020 - SMARTEVENT.COM | Tous droits réservés</p>
+        <p>© Copyright 2020 - SMARTEVENT.COM | All rights reserved</p>
       </b-col>
       <b-col
         lg="4"
@@ -29,9 +29,9 @@
       <b-col lg="4" cols="12" class="text-center mt-2">
         <ul id="nav-footer-container">
           <li class="nav-footer-item"><a href="#">Contact</a></li>
-          <li class="nav-footer-item"><a href="#">Confidentialité</a></li>
-          <li class="nav-footer-item"><a href="#">Mentions Légales</a></li>
-          <li class="nav-footer-item"><a href="#">CGV</a></li>
+          <li class="nav-footer-item"><a href="#">Confidentiality</a></li>
+          <li class="nav-footer-item"><a href="#">Legal notice</a></li>
+          <li class="nav-footer-item"><a href="#">Terms and Conditions</a></li>
         </ul>
       </b-col>
     </b-row>
