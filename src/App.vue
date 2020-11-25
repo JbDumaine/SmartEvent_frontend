@@ -8,7 +8,7 @@
         this.$route.name !== 'Invitation'
       "
     />
-    <b-container><router-view/> </b-container>
+    <b-container><router-view /> </b-container>
   </div>
 </template>
 <script>
@@ -21,8 +21,6 @@ export default {
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style lang="scss">
-
-
 html {
   height: 100%;
 }
@@ -30,12 +28,12 @@ body {
   height: 100%;
 }
 
-#app{
+#app {
   padding: 0px;
   margin: 0px;
 }
 
-.container{
+.container {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -87,8 +85,27 @@ body {
   font-size: 30px;
   color: $green;
 }
-.table-striped>tbody>tr:nth-child(odd)>td, 
-.table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: $lightSilverTree; // Choose your own color here
- }
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: $lightSilverTree; // Choose your own color here
+}
+
+.times-icon {
+  color: $bloodColor;
+}
+.trash-icon {
+  color: $bloodColor;
+}
+.info-circle-icon {
+  color: $pink;
+}
+.edit-icon {
+  color: $blue;
+}
+.plus-circle-icon {
+  color: $pink;
+}
+.eye-icon {
+  color: $pink;
+}
 </style>

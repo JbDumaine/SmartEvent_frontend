@@ -49,15 +49,10 @@
       <b-col cols="12" class="mt-3">
         <b-table :items="event.guests" :fields="fields" striped responsive="sm">
           <template #cell(show_details)="row">
-            <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-              {{ row.detailsShowing ? "Hide" : "Show" }} Details
-            </b-button>
+            <font-awesome-icon @click="row.toggleDetails" icon="info-circle" class="info-circle-icon" size="lg"/>
           </template>
           <template #cell(remove_guest)="row">
-            <font-awesome-icon
-              @click="row.toggleDetails"
-              icon="times"
-            />
+            <font-awesome-icon @click="removeGuestToEvent(row)" icon="times" class="times-icon" size="lg"/>
           </template>
           <template #row-details="row">
             <b-card>
@@ -70,24 +65,27 @@
                 <b-col sm="3" class="text-sm-right"><b>Phone:</b></b-col>
                 <b-col>{{ row.item.phone }}</b-col>
               </b-row>
-
-              <b-button size="sm" @click="row.toggleDetails"
-                >Hide Details</b-button
-              >
             </b-card>
           </template>
         </b-table>
       </b-col>
       <b-col cols="12" class="text-right">
-        <b-button variant="success">Create a guest</b-button>
+        <b-button v-b-modal.create-guest-modal variant="success"
+          >Create a guest</b-button
+        >
       </b-col>
     </b-row>
+    <CreateGuestModal />
   </b-modal>
 </template>
 <script>
 import axios from "axios";
+import CreateGuestModal from "../Guest/CreateGuestModal";
 
 export default {
+  components: {
+    CreateGuestModal,
+  },
   data() {
     return {
       selectedGuest: [],
@@ -99,7 +97,6 @@ export default {
         { key: "show_details", sortable: false, label: "" },
         {
           key: "remove_guest",
-          thClass: "d-none",
           sortable: false,
           label: "",
         },
@@ -183,15 +180,17 @@ export default {
       });
       this.selectedGuest = [];
     },
+    removeGuestToEvent(row) {
+      console.log(row);
+      for (var i = this.event.guests.length - 1; i >= 0; --i) {
+        if (this.event.guests[i].id === row.item.id) {
+          this.event.guests.splice(i, 1);
+        }
+      }
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
 
-
-.svg-inline--fa {
-  color: $bloodColor;
-  width: 25px;
-  height: 25px;
-}
 </style>
