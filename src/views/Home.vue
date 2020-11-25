@@ -58,7 +58,7 @@ export default {
   methods : {
     goToEventDetail: function(id) {
       this.$router.push(`eventDetail/${id}`);
-    }
+    },
   },
   computed: {
     currentUser() {

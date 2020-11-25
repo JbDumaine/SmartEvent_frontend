@@ -1,15 +1,15 @@
 <template>
-  <b-modal id="add-guest-modal" hide-footer hide-header size="lg">
+  <b-modal id="add-friend-modal" hide-footer hide-header size="lg">
     <b-row>
       <b-col sm="12" md="10" lg="10" class="mb-2">
         <multiselect
-          v-model="selectedGuest"
+          v-model="selectedFriend"
           id="ajax"
           label="name"
           track-by="id"
           placeholder="Type to search"
           open-direction="bottom"
-          :options="guestsList"
+          :options="FriendsList"
           :multiple="true"
           :searchable="true"
           :loading="isLoading"
@@ -34,7 +34,7 @@
           <template slot="clear" slot-scope="props">
             <div
               class="multiselect__clear"
-              v-if="selectedGuest.length"
+              v-if="selectedFriend.length"
               @mousedown.prevent.stop="clearAll(props.search)"
             ></div>
           </template>
@@ -44,15 +44,15 @@
         </multiselect>
       </b-col>
       <b-col sm="12" md="2" lg="2" class="text-right">
-        <b-button variant="primary" @click="addGuestsToEvent">Add</b-button>
+        <b-button variant="primary" @click="addFriendsToEvent">Add</b-button>
       </b-col>
       <b-col cols="12" class="mt-3">
-        <b-table :items="event.guests" :fields="fields" striped responsive="sm">
+        <b-table :items="event.friends" :fields="fields" striped responsive="sm">
           <template #cell(show_details)="row">
             <font-awesome-icon @click="row.toggleDetails" icon="info-circle" class="info-circle-icon" size="lg"/>
           </template>
-          <template #cell(remove_guest)="row">
-            <font-awesome-icon @click="removeGuestToEvent(row)" icon="times" class="times-icon" size="lg"/>
+          <template #cell(remove_friend)="row">
+            <font-awesome-icon @click="removeFriendToEvent(row)" icon="times" class="times-icon" size="lg"/>
           </template>
           <template #row-details="row">
             <b-card>
@@ -70,39 +70,39 @@
         </b-table>
       </b-col>
       <b-col cols="12" class="text-right">
-        <b-button v-b-modal.create-guest-modal variant="success"
-          >Create a guest</b-button
+        <b-button v-b-modal.create-friend-modal variant="success"
+          >Create a friend</b-button
         >
       </b-col>
     </b-row>
-    <CreateGuestModal />
+    <CreateFriendModal />
   </b-modal>
 </template>
 <script>
 import axios from "axios";
-import CreateGuestModal from "../Guest/CreateGuestModal";
+import CreateFriendModal from "../Friend/CreateFriendModal";
 
 export default {
   components: {
-    CreateGuestModal,
+    CreateFriendModal,
   },
   data() {
     return {
-      selectedGuest: [],
-      guestsList: [],
+      selectedfriend: [],
+      FriendsList: [],
       isLoading: false,
       fields: [
         "name",
         "username",
         { key: "show_details", sortable: false, label: "" },
         {
-          key: "remove_guest",
+          key: "remove_friend",
           sortable: false,
           label: "",
         },
       ],
       event: {
-        guests: [
+        friends: [
           {
             id: 1,
             name: "Leanne Graham",
@@ -155,7 +155,7 @@ export default {
   },
   methods: {
     limitText(count) {
-      return `and ${count} other guests`;
+      return `and ${count} other friends`;
     },
     asyncFind(query) {
       this.isLoading = true;
@@ -163,7 +163,7 @@ export default {
         .get("https://jsonplaceholder.typicode.com/users")
         .then((response) => {
           console.log(response.data);
-          this.guestsList = response.data;
+          this.FriendsList = response.data;
           this.isLoading = false;
         })
         .catch((error) => {
@@ -172,19 +172,19 @@ export default {
         });
     },
     clearAll() {
-      this.selectedGuest = [];
+      this.selectedFriend = [];
     },
-    addGuestsToEvent() {
-      this.selectedGuest.forEach((guest) => {
-        this.event.guests.push(guest);
+    addFriendsToEvent() {
+      this.selectedFriend.forEach((friend) => {
+        this.event.friends.push(friend);
       });
-      this.selectedGuest = [];
+      this.selectedfriend = [];
     },
-    removeGuestToEvent(row) {
+    removefriendToEvent(row) {
       console.log(row);
-      for (var i = this.event.guests.length - 1; i >= 0; --i) {
-        if (this.event.guests[i].id === row.item.id) {
-          this.event.guests.splice(i, 1);
+      for (var i = this.event.friends.length - 1; i >= 0; --i) {
+        if (this.event.friends[i].id === row.item.id) {
+          this.event.friends.splice(i, 1);
         }
       }
     },

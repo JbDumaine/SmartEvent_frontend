@@ -7,7 +7,7 @@
         <b-navbar-nav>
           <b-nav-item to="/">Home</b-nav-item>
           <b-nav-item to="/events">Events</b-nav-item>
-          <b-nav-item to="/guests">Guests</b-nav-item>
+          <b-nav-item to="/friends">Friends</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->

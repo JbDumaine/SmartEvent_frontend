@@ -182,7 +182,7 @@
 <script>
 import CreateEventModal from "../components/Event/CreateEventModal";
 export default {
-  name: `Guest`,
+  name: `friend`,
   components: { CreateEventModal },
   data() {
     return {
