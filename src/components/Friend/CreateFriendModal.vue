@@ -1,64 +1,64 @@
 <template>
-  <b-modal id="create-guest-modal" ref="create-guest-modal" hide-footer title="Create a Guest" size="lg">
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="guest-form">
+  <b-modal id="create-friend-modal" ref="create-friend-modal" hide-footer title="Create a friend" size="lg">
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="friend-form">
       <b-row>
         <b-col cols="12" lg="6" >
           <b-form-group
-            id="input-group-guest-last-name"
+            id="input-group-friend-last-name"
             label="Last Name:"
-            label-for="input-guest-last-name"
+            label-for="input-friend-last-name"
           >
             <b-form-input
-              id="input-guest-last-name"
-              v-model="guestForm.lastName"
+              id="input-friend-last-name"
+              v-model="friendForm.lastName"
               type="text"
-              placeholder="Guest's last name"
+              placeholder="friend's last name"
               required
             ></b-form-input>
           </b-form-group>
         </b-col>
         <b-col cols="12" lg="6">
           <b-form-group
-            id="input-group-guest-first-name"
+            id="input-group-friend-first-name"
             label="First Name:"
-            label-for="input-guest-first-name"
+            label-for="input-friend-first-name"
           >
             <b-form-input
-              id="input-guest-first-name"
-              v-model="guestForm.firstName"
+              id="input-friend-first-name"
+              v-model="friendForm.firstName"
               type="text"
-              placeholder="Guest's first name"
+              placeholder="friend's first name"
               required
             ></b-form-input>
           </b-form-group>
         </b-col>
         <b-col cols="12" lg="6">
           <b-form-group
-            id="input-group-guest-email"
+            id="input-group-friend-email"
             label="Email:"
-            label-for="input-guest-email"
+            label-for="input-friend-email"
           >
             <b-form-input
-              id="input-guest-email"
-              v-model="guestForm.email"
+              id="input-friend-email"
+              v-model="friendForm.email"
               type="email"
-              placeholder="Guest's email"
+              placeholder="friend's email"
               required
             ></b-form-input>
           </b-form-group>
         </b-col>
         <b-col cols="12" lg="6">
           <b-form-group
-            id="input-group-guest-phone"
+            id="input-group-friend-phone"
             label="Phone:"
-            label-for="input-guest-phone"
+            label-for="input-friend-phone"
           >
             <b-form-input
-              id="input-guest-phone"
-              v-model="guestForm.phone"
+              id="input-friend-phone"
+              v-model="friendForm.phone"
               type="text"
               required
-              placeholder="Guest's phone number"
+              placeholder="friend's phone number"
             ></b-form-input>
           </b-form-group>
         </b-col>
@@ -76,7 +76,7 @@ export default {
   data() {
     return {
       show: true,
-      guestForm: {
+      friendForm: {
         lastName: null,
         firstName: null,
         email: null,
@@ -87,8 +87,8 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      this.$emit("submitGuestEvent", this.guestForm);
-      this.$refs['create-guest-modal'].hide()
+      this.$emit("submitFriendEvent", this.friendForm);
+      this.$refs['create-friend-modal'].hide()
     },
     onReset(evt) {
       evt.preventDefault();
@@ -104,7 +104,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-::v-deep #create-guest-modal {
+::v-deep #create-friend-modal {
     color:$green;
   header {
     text-align: center;

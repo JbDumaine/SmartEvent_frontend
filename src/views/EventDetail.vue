@@ -16,7 +16,7 @@
             />
             <font-awesome-icon
               icon="users"
-              v-b-modal.guests_modal
+              v-b-modal.friends_modal
               class="mb-3"
             />
           </b-row>
@@ -35,7 +35,7 @@
                   <h5>{{ event.address.zipcode }}</h5>
                 </div>
             </b-col>
-            <b-col md="6" class="text-center" v-if="this.event.guests">
+            <b-col md="6" class="text-center" v-if="this.event.friends">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.1799356525235!2d1.4584814154737764!3d43.58196827912379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebc67b217765f%3A0xc87c7c7e8a14c9a9!2s62%20Rue%20du%20Midi%2C%2031400%20Toulouse!5e0!3m2!1sfr!2sfr!4v1606315912677!5m2!1sfr!2sfr"
                 width="300"
@@ -55,9 +55,9 @@
           </b-row>
         </b-container>
       </b-card>
-      <b-modal id="guests_modal" title="Guests">
-        <div v-for="guest in this.event.guests" :key="guest.id">
-          {{ guest.name }}
+      <b-modal id="friends_modal" title="Friends">
+        <div v-for="friend in this.event.friends" :key="friend.id">
+          {{ friend.name }}
         </div>
       </b-modal>
       <b-modal id="shopping_modal" title="Shopping">
@@ -99,7 +99,7 @@ export default {
           { name: "Whisky", quantity: 2 },
           { name: "Vodka", quantity: 5 },
         ],
-        guests: [
+        friends: [
           {
             id: 1,
             name: "Jean Baptiste Talu",
@@ -243,8 +243,8 @@ export default {
     };
   },
   computed: {
-    guestsCount() {
-      return this.event.guests.length;
+    friendsCount() {
+      return this.event.friends.length;
     },
     itemsCount() {
       return this.event.items.length;

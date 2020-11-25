@@ -2,11 +2,11 @@
   <div>
     <b-row class="mx-auto justify-content-center mt-5">
       <b-col cols="12">
-        <b-card title="Guests" class="text-center mt-2">
+        <b-card title="Friends" class="text-center mt-2">
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <font-awesome-icon
-                v-b-modal.create-guest-modal
+                v-b-modal.create-friend-modal
                 icon="plus-circle"
                 size="lg"
                 class="m-3 plus-circle-icon"
@@ -20,7 +20,7 @@
             </div>
           </div>
           <b-table
-            :items="event.guests"
+            :items="friends"
             :fields="fields"
             striped
             responsive="sm"
@@ -49,7 +49,7 @@
             </template>
           </b-table>
           <b-table
-            :items="event.guests"
+            :items="friends"
             :fields="fieldsComplete"
             striped
             responsive="sm"
@@ -59,16 +59,16 @@
         </b-card>
       </b-col>
     </b-row>
-    <CreateGuestModal @submitGuestEvent="submitGuestForm" />
+    <CreateFriendModal @submitFriendEvent="submitFriendForm" />
   </div>
 </template>
 
 <script>
-import CreateGuestModal from "../components/Guest/CreateGuestModal";
+import CreateFriendModal from "../components/Friend/CreateFriendModal";
 export default {
-  name: `Guest`,
+  name: `Friends`,
   components: {
-    CreateGuestModal,
+    CreateFriendModal,
   },
   data() {
     return {
@@ -78,8 +78,7 @@ export default {
         { key: "show_details", sortable: false, label: "" },
       ],
       fieldsComplete: ["firstName", "lastName", "email", "phone"],
-      event: {
-        guests: [
+        friends: [
           {
             id: 1,
             lastName: "Leanne Graham",
@@ -95,7 +94,6 @@ export default {
             phone: "010-692-6593 x09125",
           },
         ],
-      },
     };
   },
   computed: {
@@ -112,8 +110,8 @@ export default {
     }
   },
   methods: {
-    submitGuestForm(newGuest) {
-      this.event.guests.push(newGuest);
+    submitFriendForm(newFriend) {
+      this.event.Friends.push(newFriend);
     },
   },
 };
