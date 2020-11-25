@@ -21,10 +21,12 @@ import {
   faPlusCircle,
   faTrash,
   faEdit,
-  faTimes
+  faTimes,
+  faInfoCircle,
+  faEye
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faSadCry,faSmileBeam, faSearch, faPlusCircle, faTrash, faEdit,faTimes)
+library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt, faSadCry,faSmileBeam, faSearch, faPlusCircle, faTrash, faEdit,faTimes,faInfoCircle,faEye)
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)

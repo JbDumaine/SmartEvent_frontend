@@ -93,9 +93,11 @@
         rows="3"
         max-rows="6"
       ></b-form-textarea>
-      <b-button class="mt-3" variant="secondary" v-b-modal.add-guest-modal
-        >Guests</b-button
-      >
+      <b-col cols="12" class="text-center">
+        <b-button class="mt-3" variant="secondary" v-b-modal.add-guest-modal
+          >Guests</b-button
+        >
+      </b-col>
       <b-row class="my-3">
         <b-col cols="6">
           <b-button class="w-100" type="reset" variant="danger">Reset</b-button>
@@ -150,7 +152,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      console.log(this.eventForm);
+      this.$emit("submitEvent", this.eventForm);
     },
     onReset(evt) {
       evt.preventDefault();
@@ -175,5 +177,6 @@ export default {
 <style lang="scss" scoped>
 .event-form {
   padding: 5px;
+  color: $green;
 }
 </style>
