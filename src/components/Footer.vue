@@ -1,15 +1,10 @@
 <template>
   <div id="footer-wrapper">
     <b-row id="footer-container">
-      <b-col lg="4" cols="12" id="copyright" class="text-center ">
+      <b-col lg="4" cols="12" id="copyright" class="text-center">
         <p>© Copyright 2020 - SMARTEVENT.COM | All rights reserved</p>
       </b-col>
-      <b-col
-        lg="4"
-        cols="12"
-        id="socials_container"
-        class="text-center mt-2"
-      >
+      <b-col lg="4" cols="12" id="socials_container" class="text-center mt-2">
         <img
           src="../../public/img/icons/facebook-app-symbol.png"
           alt=""
@@ -41,16 +36,17 @@
 <script>
 export default {
   name: `Footer`,
-  computed: {
-    widthScreen() {
-      return this.$store.state.widthScreen;
-    },
-  },
+  computed: {},
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@media (max-width: 768px) {
+  #footer-wrapper {
+    display: none;
+  }
+}
 a {
   font-size: 10px;
 }
