@@ -5,7 +5,6 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Welcome from '../views/Welcome.vue'
 import Invitation from '../views/Invitation.vue'
-import CreateEvent from '../views/CreateEvent.vue'
 import Guests from '../views/Guests.vue'
 import Events from '../views/Events.vue'
 import EventDetail from '../views/EventDetail.vue'
@@ -38,11 +37,6 @@ const routes = [
     path: `/invitation-request/:invitation_token`,
     name: `Invitation`,
     component: Invitation
-  },
-  {
-    path: `/create/event`,
-    name: `CreateEvent`,
-    component: CreateEvent
   },
   {
     path: `/guests`,
