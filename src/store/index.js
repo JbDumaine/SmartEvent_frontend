@@ -8,11 +8,15 @@ export default new Vuex.Store({
     // Data : 
     events: null,
 
-    event: null,
+    friends : null
   },
   mutations: {
-    setEvent(state, term) {
-      state.event = term;
+    setEvents(state, term) {
+      state.events = term;
+    },
+
+    setFriends(state, term) {
+      state.friends = term;
     },
   },
 
@@ -28,7 +32,7 @@ export default new Vuex.Store({
         description: "On casse tout chez Etienne !"
       }
 
-      context.commit("setEvent", event);
+      context.commit("setEvents", event);
 
     }
   },

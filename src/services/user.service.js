@@ -16,16 +16,19 @@ class UserService {
   }
 
   // User events as organizer.
-  getUserEvents(){
+  getUserEvents() {
     return axios.get(API_URL + `event`, { headers: authHeader() })
   }
 
-  getUserEvent(id){
+  getUserEvent(id) {
     return axios.get(API_URL + `event/${id}`, { headers: authHeader() })
   }
 
-  getUserFriends(){
-    return axios.get(API_URL + `friends`, { headers: authHeader() } )
+  getUserFriends() {
+    return axios.get(API_URL + `friends`, { headers: authHeader() }).then(response => {
+      console.log('bb')
+      context.commit("setFriends", response.data);
+    })
   }
 }
 export default new UserService()
