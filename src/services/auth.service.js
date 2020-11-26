@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = `http://smartevent-api.tk`
+const API_URL = `http://smartevent-api.tk/`
 
 class AuthService {
   async login(user) {
@@ -11,8 +11,8 @@ class AuthService {
     return axios
       .post(API_URL + `login`, json)
       .then(response => {
-        console.log(response)
-        if (response.data.token) {
+        console.log(response.data)
+        if (response.data) {
           localStorage.setItem(`user`, JSON.stringify(response.data))
         }
 

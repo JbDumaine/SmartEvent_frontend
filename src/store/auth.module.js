@@ -1,4 +1,6 @@
 import AuthService from '../services/auth.service'
+import router from '../router'
+
 
 const user = JSON.parse(localStorage.getItem(`user`))
 const initialState = user
@@ -29,6 +31,7 @@ export const auth = {
       return AuthService.register(user).then(
         response => {
           commit(`registerSuccess`)
+          router.push({ name: 'Login'})
           return Promise.resolve(response.data)
         },
         error => {
