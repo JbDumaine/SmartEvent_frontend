@@ -13,7 +13,7 @@ class AuthService {
       .then(response => {
         console.log(response.data)
         if (response.data) {
-          localStorage.setItem(`user`, JSON.stringify(response.data))
+          localStorage.setItem(`userToken`, JSON.stringify(response.data))
         }
 
         return response.data
