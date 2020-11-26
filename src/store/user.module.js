@@ -1,4 +1,3 @@
-import axios from 'axios'
 import authHeader from '../services/auth-header'
 
 const API_URL = `http://smartevent-api.tk/api/`
@@ -16,15 +15,24 @@ export const user = {
     actions: {
 
         getEvents({ context }) {
-            axios.get(API_URL + "event", {headers: authHeader()})
-            .then((events) => {
-                context.commit("setEventsList", events.data)
-            })
-            .catch(function (error) {
-              // handle error
-              console.log(error);
-    
-            });
-        },
-    }
+            console.log(authHeader())
+            const myInit = {
+                method: 'GET',
+                headers:{
+                    'X-AUTH-TOKEN': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoyfQ._cvwUBno-wgRAC1t3il0Pf3zqRt4LCOfIX9mBZjt4lM'
+                },  
+            };
+                fetch(API_URL + "event", myInit)
+                    .then((result) => result.json())
+                    .then((json) => {
+                        context.commit("setEvents", json);
+                    })
+                    .catch((error) => {
+                        console.error("Une erreur s'est produite");
+                        console.log(error);
+                    });
+        }
+
+    },
 }
+
