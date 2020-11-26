@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import AddFriendModal from "./AddFriendModal.vue";
+import AddFriendModal from "./AddFriendModal"
 export default {
   components: {
     AddFriendModal,
