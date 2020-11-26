@@ -94,8 +94,8 @@
         max-rows="6"
       ></b-form-textarea>
       <b-col cols="12" class="text-center">
-        <b-button class="mt-3" variant="secondary" v-b-modal.add-guest-modal
-          >Guests</b-button
+        <b-button class="mt-3" variant="secondary" v-b-modal.add-friend-modal
+          >Friends</b-button
         >
       </b-col>
       <b-row class="my-3">
@@ -109,16 +109,15 @@
         </b-col>
       </b-row>
     </b-form>
-    <AddGuestModal />
+    <AddFriendModal />
   </div>
 </template>
 
 <script>
-import AddGuestModal from "./AddGuestModal.vue";
-
+import AddFriendModal from "./AddFriendModal"
 export default {
   components: {
-    AddGuestModal,
+    AddFriendModal,
   },
   data() {
     return {
@@ -129,7 +128,7 @@ export default {
         description: null,
         eventDate: null,
         eventTime: null,
-        guests: [],
+        friends: [],
         items: null,
       },
       eventTypes: [
@@ -163,7 +162,7 @@ export default {
       this.eventForm.description = null;
       this.eventForm.eventDate = null;
       this.eventForm.eventTime = null;
-      this.eventForm.guests = null;
+      this.eventForm.friends = null;
       this.eventForm.items = null;
       // Trick to reset/clear native browser form validation state
       this.show = false;

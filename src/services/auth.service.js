@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = `http://smartevent-api.tk/`
+const API_URL = `https://reqres.in/api/`
 
 class AuthService {
   async login(user) {

@@ -5,7 +5,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Welcome from '../views/Welcome.vue'
 import Invitation from '../views/Invitation.vue'
-import Guests from '../views/Guests.vue'
+import Friends from '../views/Friends.vue'
 import Events from '../views/Events.vue'
 import EventDetail from '../views/EventDetail.vue'
 import LegalNotice from '../views/LegalNotice.vue'
@@ -39,9 +39,9 @@ const routes = [
     component: Invitation
   },
   {
-    path: `/guests`,
-    name: `Guests`,
-    component: Guests
+    path: `/friends`,
+    name: `Friends`,
+    component: Friends
   },
   {
     path: `/events`,
