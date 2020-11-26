@@ -16,7 +16,7 @@ class UserService {
   }
 
   // User events as organizer.
-  getUserEvent(){
+  getUserEvents(){
     return axios.get(API_URL + `event`, { headers: authHeader() })
   }
 
@@ -27,15 +27,5 @@ class UserService {
   getUserFriends(){
     return axios.get(API_URL + `friends`, { headers: authHeader() } )
   }
-
-  // Methods Post corresponding to the items of the user.
-
-  getUserEvent(request){
-    return axios.post(API_URL + `event/${id}`, { headers: authHeader() })
-    
-  }
-
 }
-
-
 export default new UserService()
