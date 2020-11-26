@@ -4,6 +4,9 @@ import authHeader from './auth-header'
 const API_URL = `http://smartevent-api.tk/`
 
 class UserService {
+
+  // Methods Get corresponding to the items of the user.
+
   getPublicContent() {
     return axios.get(API_URL + `all`)
   }
@@ -11,6 +14,27 @@ class UserService {
   getUserHome() {
     return axios.get(API_URL + `user`, { headers: authHeader() })
   }
+
+  // User events as organizer.
+  getUserEvent(){
+    return axios.get(API_URL + `event`, { headers: authHeader() })
+  }
+
+  getUserEvent(id){
+    return axios.get(API_URL + `event/${id}`, { headers: authHeader() })
+  }
+
+  getUserFriends(){
+    return axios.get(API_URL + `friends`, { headers: authHeader() } )
+  }
+
+  // Methods Post corresponding to the items of the user.
+
+  getUserEvent(request){
+    return axios.post(API_URL + `event/${id}`, { headers: authHeader() })
+    
+  }
+
 }
 
 
