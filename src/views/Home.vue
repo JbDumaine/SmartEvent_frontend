@@ -65,13 +65,11 @@ export default {
       return this.$store.state.auth.user
     }
   },
-  created(){
-    this.$store.dispatch('user/getEvents');
-  },
   mounted() {
     if (!this.currentUser) {
       this.$router.push(`/welcome`)
     }
+    this.$store.dispatch('user/getEvents');
   }
 }
 </script>

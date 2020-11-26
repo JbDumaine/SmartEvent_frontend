@@ -1,7 +1,7 @@
 import axios from 'axios'
 import authHeader from './auth-header'
 
-const API_URL = `http://smartevent-api.tk/`
+const API_URL = `http://smartevent-api.tk/api/`
 
 class UserService {
 
@@ -25,10 +25,7 @@ class UserService {
   }
 
   getUserFriends() {
-    return axios.get(API_URL + `friends`, { headers: authHeader() }).then(response => {
-      console.log('bb')
-      context.commit("setFriends", response.data);
-    })
+    return axios.get(API_URL + `friends`, { headers: authHeader() })
   }
 }
 export default new UserService()

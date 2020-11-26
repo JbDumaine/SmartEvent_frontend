@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { auth } from './auth.module'
+import { user } from './user.module'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -11,10 +12,6 @@ export default new Vuex.Store({
     friends : null
   },
   mutations: {
-    setEvents(state, term) {
-      state.events = term;
-    },
-
     setFriends(state, term) {
       state.friends = term;
     },
@@ -38,6 +35,7 @@ export default new Vuex.Store({
   },
 
   modules: {
-    auth
+    auth,
+    user
   }
 })
